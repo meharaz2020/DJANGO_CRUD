@@ -1,0 +1,15 @@
+{% extends 'first_app/base.html' %}
+ {%block body_block%}
+ <a href="{% url 'edit' ar_id=ar_info.id %}">Edit</a>
+<h3>Album list {{ar_info.first_name}}</h3>
+<h3>Ratting: {{al_list_avg}}</h3>
+{% for album in al_list %}
+<h1>{{album.name}}</h1>
+<h1>{{album.rating}}</h1>
+
+{% endfor %}
+ 
+
+ <a href="{% url 'delete' ar_id=ar_info.id %}">Delete</a>
+
+ {%endblock%}
